@@ -1,0 +1,73 @@
+body{
+    transition: background-color 0.5s, color 0.5s;
+}
+body.light-mode{
+    background-color: rgb(214,214,214);
+    color: black;
+}
+body.dark-mode{
+    background-color: black;
+    color: white;
+}
+.theme-switch-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.theme-switch{
+    position: relative;
+    display: inline-block;
+    height: 80px;
+    width: 44px;
+}
+.slider:before{
+    position:absolute;
+    content:"";
+    height: 36px;
+    width: 36px;
+    bottom: 4%;
+    left: 4%;
+}
+.theme.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position:absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffc72b;
+    transition : 0.4s;
+    border-radius: 44px;
+    width: 80px;
+    height: 44px;
+}
+.slider:hover{
+    box-shadow: 0 0 20px rgb(214,252,0);
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    width: 36px;
+    height: 36px;
+    left:4px;
+    bottom: 4px;
+    background:url('../img/hAKsFKZ.jpg');
+    transition: 0.4s;
+    border-radius: 50%;
+    background-size:cover;
+}
+input:checked + .slider{
+    background-color: #2c0b47;
+}
+input:checked + .slider:before{
+    transform: translateX(36px);
+    background-image: url('../img/power-lines-moon-anime-quite-night-4k-pb-3840x2160.jpg');
+    background-size: cover;
+}
+
